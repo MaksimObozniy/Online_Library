@@ -2,6 +2,7 @@ import json
 
 from jinja2 import Environment, FileSystemLoader
 from livereload import Server
+from more_itertools import chunked
 
 def main():
 
@@ -12,7 +13,9 @@ def main():
     env = Environment(loader=FileSystemLoader('.'))
     template = env.get_template('template.html')
 
-    output = template.render(books=books)
+    rows = list(chunked(books, 2))
+
+    output = template.render(books=books, rows=rows)
 
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(output)
