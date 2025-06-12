@@ -1,6 +1,7 @@
 import json
-from jinja2 import Environment, FileSystemLoader
 
+from jinja2 import Environment, FileSystemLoader
+from livereload import Server
 
 def main():
 
@@ -18,3 +19,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    server = Server()
+    server.watch('template.html', main)
+    server.serve(root='.', default_filename='index.html')
