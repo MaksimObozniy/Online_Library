@@ -10,12 +10,12 @@
     <div class="container">
         {% for row in rows %}
         <div class="row">
-            {% for book in books %}
+            {% for book in row %}
             <div class="col-md-6">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="{{ book.img_src }}" class="card-img" alt="{{ book.title }}">
+                            <img src="../{{ book.img_src }}" class="card-img" alt="{{ book.title }}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -23,7 +23,7 @@
                                 <p class="card-text">{{ book.author }}</p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                        <a href="{{ book.book_path }}" target="_blank">Читать</a>
+                                        <a href="../{{ book.book_path }}" target="_blank">Читать</a>
                                     </small>
                                 </p>
                             </div>
