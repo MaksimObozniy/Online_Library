@@ -1,1 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.venv/
 venv/
+.idea/
+*.DS_Store
+
+# Не выгружаем исходные файлы
+pages/
