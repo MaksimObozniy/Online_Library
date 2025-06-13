@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <nav class="mt-4" aria-label="Навигация по страницам">
-            <ul class="pagination justify-content-center">
+            <ul class="pagination">
                 {% if current_page > 1 %}
                 <li class="page-item">
                     <a class="page-link" href="{% if current_page - 1 == 1 %}index.html{% else %}index{{ current_page - 1 }}.html{% endif %}" aria-label="Назад">Назад</a>

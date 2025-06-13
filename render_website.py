@@ -51,3 +51,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    server = Server()
+    server.watch('template.html', main)
+    server.watch('meta_data.json', main)
+    server.watch('render_website.py', main)
+    server.serve(root='docs')
