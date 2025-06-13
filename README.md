@@ -2,6 +2,9 @@
 
 Этот проект — простой сайт, на котором можно полистать книги с разбивкой на страницы. 
 
+Ссылка на рабочий сайт: https://maksimobozniy.github.io/Online_Library/
+
+### Фото с сайта
 <img width="847" alt="image" src="https://github.com/user-attachments/assets/78e961ed-28c3-4ab3-a870-371544c80a4a" />
 
 ## Как запустить проект у себя
