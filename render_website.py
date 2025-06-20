@@ -3,10 +3,11 @@ import json
 import math
 import shutil
 
+from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
 from livereload import Server
 from more_itertools import chunked
-from dotenv import load_dotenv
+from urllib.parse import quote
 
 
 BOOKS_PER_PAGE = 10
@@ -25,6 +26,8 @@ def main():
     pages = list(chunked(books, BOOKS_PER_PAGE))
 
     env = Environment(loader=FileSystemLoader('.'))
+    env.filters['urlcode'] = lambda u: quote(u)
+
     template = env.get_template('template.html')
 
     output_dir = 'docs'
@@ -51,7 +54,7 @@ def main():
         shutil.copytree(src, dst)
 
     if os.path.exists('img/favicon.ico'):
-        shutil.copy('favicon.ico', os.path.join(output_dir, 'favicon.ico'))
+        shutil.copy('img/favicon.ico', os.path.join(output_dir, 'media/img/favicon.ico'))
 
 
 if __name__ == '__main__':
