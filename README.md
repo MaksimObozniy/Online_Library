@@ -21,6 +21,11 @@ cd Online_Library
 ```bash
 pip install -r requirements.txt
 ```
+Создайте файл `.env` и напишите путь до файла json в котором хранится информация о книге, например как в данном проекте:
+
+```.env
+DATA_PATH=static/meta_data.json
+```
 
 3. Запусти сайт локально с автообновлением:
 
