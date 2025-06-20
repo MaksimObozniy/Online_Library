@@ -6,13 +6,18 @@ import shutil
 from jinja2 import Environment, FileSystemLoader
 from livereload import Server
 from more_itertools import chunked
+from dotenv import load_dotenv
 
 
 BOOKS_PER_PAGE = 10
 
 
 def main():
-    with open('static/meta_data.json', 'r', encoding='utf-8') as f:
+
+    load_dotenv()
+    data_path = os.environ.get('DATA_PATH')
+
+    with open(data_path, 'r', encoding='utf-8') as f:
         books = json.load(f)
 
     total_books = len(books)
