@@ -12,7 +12,7 @@ BOOKS_PER_PAGE = 10
 
 
 def main():
-    with open('meta_data.json', 'r', encoding='utf-8') as f:
+    with open('static/meta_data.json', 'r', encoding='utf-8') as f:
         books = json.load(f)
 
     total_books = len(books)
@@ -38,14 +38,14 @@ def main():
             f.write(rendered_page)
 
 
-    for folder in ['books', 'img', 'bootstrap']:
+    for folder in ['media', 'static']:
         src = folder
         dst = os.path.join(output_dir, folder)
         if os.path.exists(dst):
             shutil.rmtree(dst)
         shutil.copytree(src, dst)
 
-    if os.path.exists('favicon.ico'):
+    if os.path.exists('img/favicon.ico'):
         shutil.copy('favicon.ico', os.path.join(output_dir, 'favicon.ico'))
 
 
